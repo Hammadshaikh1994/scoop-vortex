@@ -1,0 +1,35 @@
+{
+    "version": "1.1.3",
+    "description": "High-velocity multi-threaded download manager with 8K stream capture, TeraBox acceleration, and BitTorrent client",
+    "homepage": "https://vortexdownloader.org",
+    "license": {
+        "identifier": "Freemium",
+        "url": "https://vortexdownloader.org/terms/"
+    },
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/Hammadshaikh1994/vortex-downloader/releases/download/v1.1.3/Vortex.Downloader.Setup.1.1.3.exe#/dl.7z",
+            "hash": "E61D27DEB21DE588A57167D8A85DACF7CF324F33A6375E0DF10235A48C041C39",
+            "pre_install": [
+                "Expand-7zipArchive \"$dir\\`$PLUGINSDIR\\app-64.7z\" \"$dir\"",
+                "Remove-Item \"$dir\\`$*\", \"$dir\\Uninst*\" -Recurse -Force"
+            ]
+        }
+    },
+    "shortcuts": [
+        [
+            "Vortex Downloader.exe",
+            "Vortex Downloader"
+        ]
+    ],
+    "checkver": {
+        "github": "https://github.com/Hammadshaikh1994/vortex-downloader"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/Hammadshaikh1994/vortex-downloader/releases/download/v$version/Vortex.Downloader.Setup.$version.exe#/dl.7z"
+            }
+        }
+    }
+}
